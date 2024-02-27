@@ -1,0 +1,5 @@
+- Add license
+- Complete Readme
+- Add Header
+- Create Report
+- Login should be done before with an API --> Add a comment that it wasn't possible in this example
