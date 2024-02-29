@@ -2,36 +2,58 @@
 
 package testcases;
 
-import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertThat;
-
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import page_objects.FlightsPage;
-import page_objects.SearchResults;
+import page_objects.Page_Flights;
 
 
 public class TCSearchFlight {
-    // protected WebDriver driver;
 
     @Test
     public void tcSearchflight(){
-        String origin = "Hanoi";
+        String origin = "Ho Chi Minh City";
         String destination = "Frankfurt am Main";
-        
-        WebDriver driver = new EdgeDriver(); 
-        driver.get("https://www.skyscanner.com.vn/flights");
+        String departure_month = "April";
+        String returen_month = "April";
+      
+        WebDriver driver_edge = new EdgeDriver(); 
 
-        FlightsPage flightspage = new FlightsPage(driver);
+        Page_Flights search_flights = new Page_Flights();
 
-        flightspage.searchForFlights(origin, destination);
+        // go to URL and check if it is the right website
+        search_flights.check_Page_Flights(driver_edge);
 
-        SearchResults searchResults = new SearchResults(driver, origin, destination);
-        // assertThat(searchResults.getMessageText(), is("Cheap flights from " + origin + " to " + destination + " at Skyscanner"));
-        assertEquals(searchResults.getMessageText(), "Cheap flights from " + origin + " to " + destination + " at Skyscanner");
-    
-        driver.quit();
+        // test the flight search
+        search_flights.searchForFlights(driver_edge, origin, destination);
+
+        // check the result
+
+        driver_edge.quit();
     }
 }
+
+
+// @Test
+// public void tcSearchflight(){
+//     String skyscannerurl = "https://www.skyscanner.com/flights?locale=en-US";
+//     String origin = "Ho Chi Minh City";
+//     String destination = "Frankfurt am Main";
+    
+//     WebDriver driver = new EdgeDriver(); 
+
+//     driver.get(skyscannerurl);
+    
+
+//     FlightsPage flightspage = new FlightsPage(driver);
+
+//     flightspage.searchForFlights(origin, destination);
+
+//     SearchResults searchResults = new SearchResults(driver, origin, destination);
+//     // assertThat(searchResults.getMessageText(), is("Cheap flights from " + origin + " to " + destination + " at Skyscanner"));
+//     assertEquals(searchResults.getMessageText(), "Cheap flights from " + origin + " to " + destination + " at Skyscanner");
+
+//     driver.quit();
+// }

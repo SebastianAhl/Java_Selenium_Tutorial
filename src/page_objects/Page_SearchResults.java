@@ -3,12 +3,12 @@ package page_objects;
 // import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SearchResults {
+public class Page_SearchResults {
     protected WebDriver driver;
     String origin;
     String destination;
 
-    public SearchResults(WebDriver driver, String origin, String destination){
+    public page_SearchResults(WebDriver driver, String origin, String destination){
         this.driver = driver;
         this.destination = destination;
         this.origin = origin;
