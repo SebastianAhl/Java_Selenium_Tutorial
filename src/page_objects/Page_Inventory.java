@@ -3,8 +3,10 @@ package page_objects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import classes.Test_Classes;
+
 public class Page_Inventory {
-    String address = "https://www.saucedemo.com/inventory.html";
+    
 
     // Sauce Labs Backpack title
     // link product information
@@ -77,16 +79,14 @@ public class Page_Inventory {
     // Sauce Labs Test T-Shirt Add to cart
     private By testtshirtaddcartBy = By.id("add-to-cart-test.allthethings()-t-shirt-(red)");
 
-    public void check_url(WebDriver driver){
-        driver.get(address);
-
-        if (!driver.getCurrentUrl().equals(address)) {
-            throw new IllegalStateException("This is not the Inventory Page," +
-                  " current page is: " + driver.getCurrentUrl());
-        }
-    } 
 
     public void addalltocart(WebDriver driver) {
+        driver.get(this.address);
+
+        Test_Classes test_class = new Test_Classes();
+
+        test_class.check_url(driver, this.address);
+
         driver.findElement(backpackaddcartBy).click();
         driver.findElement(bikelightaddcartBy).click();
         driver.findElement(bolttshirtaddcartBy).click();
