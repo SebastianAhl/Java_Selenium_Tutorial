@@ -64,5 +64,6 @@
         "c:\\Selenium\\selenium-java-4.18.1\\lib\\opentelemetry-sdk-trace-1.35.0.jar",
         "c:\\Selenium\\selenium-java-4.18.1\\lib\\opentelemetry-semconv-1.23.1-alpha.jar"
     ],
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true
 }

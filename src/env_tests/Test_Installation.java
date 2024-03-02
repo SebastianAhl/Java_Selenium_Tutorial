@@ -1,6 +1,12 @@
 package env_tests;
+
+import org.junit.Test;
+
 public class Test_Installation {
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void test_java_installation(){
         System.out.println("Hello, World!");
+
+
     }
 }

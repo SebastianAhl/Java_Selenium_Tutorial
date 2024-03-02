@@ -1,4 +1,4 @@
-package page_objects.saucedemo;
+package page_objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -99,6 +99,4 @@ public class Page_Inventory {
 
         // return new Page_SearchResults(driver, origin, destination);
     }
-
-
 }

@@ -1,11 +1,13 @@
 package env_tests;
 
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class Test_Selenium {
-    public static void main(String[] args) {
+    @Test
+    public void main() {
         WebDriver driver = new ChromeDriver();
         
         driver.get("https://selenium.dev");

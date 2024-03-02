@@ -1,13 +1,13 @@
 // Test the flight search feature
 
-package testcases.saucedemo;
+package testcases;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import page_objects.saucedemo.Page_Inventory;
-import page_objects.saucedemo.Page_Login;
+import page_objects.Page_Inventory;
+import page_objects.Page_Login;
 
 
 

@@ -1,4 +1,4 @@
-import testcases.saucedemo.TCLogin;
+import testcases.TCLogin;
 
 public class test_saucedemo {
     
