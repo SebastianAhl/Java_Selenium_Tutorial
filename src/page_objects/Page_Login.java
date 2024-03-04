@@ -3,8 +3,6 @@ package page_objects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import classes.Test_Classes;
-
 public class Page_Login {
     
 
@@ -17,23 +15,27 @@ public class Page_Login {
     // login button
     private By loginbtnBy = By.id("login-button");
 
+    // error message
+    private By errorBtn = By.cssSelector("h3[data-test='error']");
 
-    public void login(WebDriver driver, String username, String password, String start_address, String dest_address) {
-        driver.get(start_address);
-        
-        Test_Classes test_class = new Test_Classes();
 
-        test_class.check_url(driver, start_address);
 
+    public void login(WebDriver driver, String username, String password) {
         driver.findElement(usernameBy).sendKeys(username);
         driver.findElement(passwordBy).sendKeys(password);
         driver.findElement(loginbtnBy).click();
 
-        // check destination url
-        test_class.check_url(driver, dest_address);
+    }
 
-        // Page_Inventory page_Inventory = new Page_Inventory();
-        // page_Inventory.check_url(driver, dest_address);
+    public String returnError(WebDriver driver){
+        String ErrorMsg;
+        ErrorMsg = driver.findElement(errorBtn).getText();
 
+        return ErrorMsg;
+    }
+
+    public void deleteInput(WebDriver driver){
+        driver.findElement(usernameBy).clear();
+        driver.findElement(passwordBy).clear();
     }
 }

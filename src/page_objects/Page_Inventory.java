@@ -3,7 +3,6 @@ package page_objects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import classes.Test_Classes;
 
 public class Page_Inventory {
     
@@ -81,22 +80,11 @@ public class Page_Inventory {
 
 
     public void addalltocart(WebDriver driver) {
-        driver.get(this.address);
-
-        Test_Classes test_class = new Test_Classes();
-
-        test_class.check_url(driver, this.address);
-
         driver.findElement(backpackaddcartBy).click();
         driver.findElement(bikelightaddcartBy).click();
         driver.findElement(bolttshirtaddcartBy).click();
         driver.findElement(fleecejacketaddcartBy).click();
         driver.findElement(onesieaddcartBy).click();
         driver.findElement(testtshirtaddcartBy).click();
-        // driver.findElement(usernameBy).sendKeys(username);
-        // driver.findElement(passwordBy).sendKeys(password);
-        // driver.findElement(loginbtnBy).click();
-
-        // return new Page_SearchResults(driver, origin, destination);
     }
 }

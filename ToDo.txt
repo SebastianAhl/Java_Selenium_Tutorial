@@ -5,21 +5,21 @@ ToDo:                           Status
 - Create Report (Optional)
 
 
-Page Objects:               Testcases:                                                          URL:
-- Login                     - Login standard_user                                               https://www.saucedemo.com
-                            - Failed Login with locked_out_user
-                            - (Optional) error-user. same tests like standard-user 
-                              to find all errors
-- Inventory Standard User   - Product sort function (A-Z; Z-A; Price L-H; Price H-L)            https://www.saucedemo.com/inventory.html
-- Sidebar Standard  User    - Check Link "About"                                                ---
-                            - Function & Link "Logout"
-                            - Function "Reset App State"
-- Cart                      - Check data: QTY, Description, Price, Links                        https://www.saucedemo.com/cart.html
-- Checkout-step-one         - Check with data                                                   https://www.saucedemo.com/checkout-step-one.html
-                            - Check with missing data
-- Checkout-step-two         - Check data: QTY, Description, Price, Links                        https://www.saucedemo.com/checkout-step-two.html
-                              Payment Information (Standard User Sauce Card #31337), 
-                              Item Total, Tax, Total
-                            - Finish Button
-- Checkout-complete         - Check for Checkout Complete                                       https://www.saucedemo.com/checkout-complete.html
-                            - "Back Home" Button on Checkout-Complete
+Status  Page Objects:               Testcases:                                                          URL:
+X       - Login                     - Login standard_user                                               https://www.saucedemo.com
+                                    - Failed Login with locked_out_user
+                                    - (Optional) error-user. same tests like standard-user 
+                                      to find all errors
+        - Inventory Standard User   - Product sort function (A-Z; Z-A; Price L-H; Price H-L)            https://www.saucedemo.com/inventory.html
+        - Sidebar Standard  User    - Check Link "About"                                                ---
+                                    - Function & Link "Logout"
+                                    - Function "Reset App State"
+        - Cart                      - Check data: QTY, Description, Price, Links                        https://www.saucedemo.com/cart.html
+        - Checkout-step-one         - Check with data                                                   https://www.saucedemo.com/checkout-step-one.html
+                                    - Check with missing data
+        - Checkout-step-two         - Check data: QTY, Description, Price, Links                        https://www.saucedemo.com/checkout-step-two.html
+                                      Payment Information (Standard User Sauce Card #31337), 
+                                      Item Total, Tax, Total
+                                    - Finish Button
+        - Checkout-complete         - Check for Checkout Complete                                       https://www.saucedemo.com/checkout-complete.html
+                                    - "Back Home" Button on Checkout-Complete
