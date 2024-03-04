@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -41,10 +42,13 @@ public class CartTests {
 
 
     @Test
+    @DisplayName("Test abc")
     public void addalltocartStandardUser(){
         // add all to the inventory
         Page_Inventory addall = new Page_Inventory();
         addall.addalltocart(driver_edge);
+
+        
 
         // open cart 
 

@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -34,8 +35,6 @@ public class LoginLogoutTests {
     }
 
     @Test
-    @DisplayName("Test 1")
-    @Tag("my-tag")
     public void StandardUserLoginLogout(){
         String username = "standard_user";
         String password = "secret_sauce";
@@ -50,7 +49,9 @@ public class LoginLogoutTests {
         sidebarPage.logout(driver_edge);
 
         // Check URL Startpage
-        assertEquals(this.login_address, this.driver_edge.getCurrentUrl());        
+        assertEquals(this.login_address, this.driver_edge.getCurrentUrl());    
+        
+        
     }
 
     @Test
@@ -108,7 +109,6 @@ public class LoginLogoutTests {
             assertEquals(OrigErrorMsg, RecErrorMsg);  
         }
         
-        testReporter.publishEntry("a key", "a value");
     }
 
     @After

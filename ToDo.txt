@@ -1,8 +1,11 @@
-ToDo:                           Status
-- Add license                   Added GNU
+ToDo:                                                                                 Status
+- Add license                                                                         Added GNU
 - Complete Readme
 - Add Header to each file
 - Create Report (Optional)
+  - Add @Tag("") to the tests to separate them
+  - Add @DisplayNames("") to identify them
+  - Create Maven Project (second version, too complicated to explain just Selenium)
 
 
 Status  Page Objects:               Testcases:                                                          URL:
