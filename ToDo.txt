@@ -2,6 +2,7 @@ ToDo:                                                                           
 - Add license                                                                         Added GNU
 - Complete Readme
 - Add Header to each file
+- (Optional) Check links with properties
 - Create Report (Optional)
   - Add @Tag("") to the tests to separate them
   - Add @DisplayNames("") to identify them
@@ -10,12 +11,13 @@ ToDo:                                                                           
 
 Status  Page Objects:               Testcases:                                                          URL:
 X       - Login                     - Login standard_user                                               https://www.saucedemo.com
-                                    - Failed Login with locked_out_user
-                                    - (Optional) error-user. same tests like standard-user 
+X                                   - Failed Login with locked_out_user
+X                                   - (Optional) error-user. same tests like standard-user 
                                       to find all errors
         - Inventory Standard User   - Product sort function (A-Z; Z-A; Price L-H; Price H-L)            https://www.saucedemo.com/inventory.html
-        - Sidebar Standard  User    - Check Link "About"                                                ---
-                                    - Function & Link "Logout"
+X       - Sidebar Standard  User    - Check Link "About"                                                ---
+X                                   - Slide out and in
+X                                   - Function & Link "Logout"
                                     - Function "Reset App State"
         - Cart                      - Check data: QTY, Description, Price, Links                        https://www.saucedemo.com/cart.html
         - Checkout-step-one         - Check with data                                                   https://www.saucedemo.com/checkout-step-one.html

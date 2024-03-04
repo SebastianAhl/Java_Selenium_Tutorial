@@ -79,6 +79,9 @@ public class Page_Inventory {
     private By testtshirtaddcartBy = By.id("add-to-cart-test.allthethings()-t-shirt-(red)");
 
 
+    // Button open cart
+    private By buttonOpenCartBy = By.className("shopping_cart_link");
+
     public void addalltocart(WebDriver driver) {
         driver.findElement(backpackaddcartBy).click();
         driver.findElement(bikelightaddcartBy).click();
@@ -87,4 +90,10 @@ public class Page_Inventory {
         driver.findElement(onesieaddcartBy).click();
         driver.findElement(testtshirtaddcartBy).click();
     }
+
+    public void openCart(WebDriver driver) {
+        driver.findElement(buttonOpenCartBy).click();
+    }
+
+    
 }

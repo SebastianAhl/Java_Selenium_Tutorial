@@ -9,8 +9,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.devtools.v120.page.Page;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import page_objects.Page_Cart;
 import page_objects.Page_Inventory;
 import page_objects.Page_Login;
 
@@ -43,20 +45,26 @@ public class CartTests {
 
     @Test
     @DisplayName("Test abc")
-    public void addalltocartStandardUser(){
-        // add all to the inventory
-        Page_Inventory addall = new Page_Inventory();
-        addall.addalltocart(driver_edge);
-
+    public void addremovealltoCartStandardUser(){
+        String Result;
         
+        Page_Inventory pageInventory = new Page_Inventory();
+        Page_Cart removeAll = new Page_Cart();
 
-        // open cart 
+        // add all to the cart
+        pageInventory.addalltocart(driver_edge);
 
-        // check url of cart
+        // open cart
+        pageInventory.openCart(driver_edge);
+
+        // remove all from cart
+        Result = removeAll.removeAllItems(driver_edge);
         
-        // check the prize
+        assertEquals(Result, "Elements in cart: 0");
         
     }
+
+
 
     @After
     public void teardown(){
