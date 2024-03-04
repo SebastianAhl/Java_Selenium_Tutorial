@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import page_objects.Page_Inventory;
+
 import page_objects.Page_Login;
 
 
@@ -14,7 +14,7 @@ import page_objects.Page_Login;
 public class TCLogin {
 
     @Test
-    public void tcLoginUser(){
+    public void tcStandardUser(){
         String username = "standard_user";
         String password = "secret_sauce";
         String start_address = "https://www.saucedemo.com/";
