@@ -2,6 +2,8 @@ package page_objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class Page_Inventory {
@@ -65,6 +67,23 @@ public class Page_Inventory {
     private By buttonOpenCartBy = By.className("shopping_cart_link");
 
 
+    // menu Sort Items
+    // open
+    private By sortItemsBy = By.className("product_sort_container");
+    //active option
+    private By activeOptionBy = By.className("active_option");
+
+
+
+    public String sortItems(WebDriver driver, int index){
+
+        WebElement selectOption = driver.findElement(sortItemsBy);
+        Select select = new Select(selectOption);
+
+        select.selectByIndex(index);
+
+        return driver.findElement(activeOptionBy).getText();
+    }
 
     public void addalltocart(WebDriver driver) {
         driver.findElement(item4AddToCartBy).click();
@@ -101,5 +120,7 @@ public class Page_Inventory {
                 break;
         }
 
-        }
+    }
+
+
 }

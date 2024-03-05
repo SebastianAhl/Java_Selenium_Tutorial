@@ -22,6 +22,7 @@ public class CartTests {
     String start_address = "https://www.saucedemo.com/";
     String dest_address = "https://www.saucedemo.com/inventory.html";
     Page_Login login_user = new Page_Login();
+    Page_Inventory inventory_page = new Page_Inventory();
     String username = "standard_user";
     String password = "secret_sauce";
 
@@ -62,7 +63,34 @@ public class CartTests {
         
     }
 
+    @Test
+    public void selectSort(){
+        String text;
 
+        for( int i = 0; i < 4; i++){
+            // index A-Z=0 ; Z-A=1 ; Price low-high=2 ; Price high-low=3
+            text = inventory_page.sortItems(driver_edge, i);
+
+            switch (i) {
+                case 0:
+                    // text Name (A to Z)
+                    assertEquals(text, "Name (A to Z)");
+                    break;
+                case 1:
+                    // text Name (Z to A)
+                    assertEquals(text, "Name (Z to A)");  
+                    break;
+                case 2:
+                    // text Price (low to high)
+                    assertEquals(text, "Price (low to high)");
+                    break;
+                case 3:
+                    // text Price (high to low)
+                    assertEquals(text, "Price (high to low)");
+                    break;    
+            }
+        }
+    }
 
     @After
     public void teardown(){

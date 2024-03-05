@@ -91,7 +91,7 @@ String login_address = "https://www.saucedemo.com/";
     }
 
     @Test
-    public void allItems(){
+    public void showAllItems(){
         // open cart
         inventory.openCart(driver_edge);
 
