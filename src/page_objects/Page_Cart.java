@@ -50,6 +50,8 @@ public class Page_Cart {
     // Cart items
     private By cartItems = By.className("cart_item");
 
+
+
     public String removeAllItems(WebDriver driver){
         // count Cart Items
         List<WebElement> listCartItems;
@@ -66,13 +68,16 @@ public class Page_Cart {
         driver.findElement(onesieremoveBy).click();
         driver.findElement(testtshirtremoveBy).click();
 
-        // try {
-            List<WebElement> listCartItemsDel;
-            listCartItemsDel = driver.findElements(cartItems);
-            return ("Elements in cart: " + listCartItemsDel.size());
-        // } catch (Exception e) {
-        //     // TODO Auto-generated catch block
-        //     return "All Elements deleted";
-        // }
+        // check if cart is empty
+        List<WebElement> listCartItemsDel;
+        listCartItemsDel = driver.findElements(cartItems);
+        return ("Elements in cart: " + listCartItemsDel.size());
+    }
+
+    public int countItemsInCart(WebDriver driver){
+        // count Cart Items
+        List<WebElement> listCartItems;
+        listCartItems = driver.findElements(cartItems);
+        return listCartItems.size();
     }
 }
