@@ -16,7 +16,9 @@ import page_objects.Page_Sidebar;
 
 public class SidebarTests {
 String login_address = "https://www.saucedemo.com/";
-    String inventory_address = "https://www.saucedemo.com/inventory.html";
+    String inventory_url = "https://www.saucedemo.com/inventory.html";
+    String cart_url = "https://www.saucedemo.com/cart.html";
+    String item_0_url = "https://www.saucedemo.com/inventory-item.html?id=0";
     WebDriver driver_edge = new EdgeDriver(); 
     Page_Login loginPage = new Page_Login();
     Page_Sidebar sideBar = new Page_Sidebar();
@@ -39,7 +41,7 @@ String login_address = "https://www.saucedemo.com/";
         loginPage.login(this.driver_edge, username, password);
         
         // Check URL Inventory
-        assertEquals(this.inventory_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.inventory_url, this.driver_edge.getCurrentUrl());
    
     }
 
@@ -86,6 +88,33 @@ String login_address = "https://www.saucedemo.com/";
         items = cart.countItemsInCart(driver_edge);
         assertEquals(items, expected_items_after_res);
 
+    }
+
+    @Test
+    public void allItems(){
+        // open cart
+        inventory.openCart(driver_edge);
+
+        // check url (cart)
+        assertEquals(driver_edge.getCurrentUrl(), this.cart_url);
+
+        // open sidebar and click All Items
+        sideBar.allItems(driver_edge);
+
+        // check url (inventory)
+        assertEquals(driver_edge.getCurrentUrl(), this.inventory_url);
+
+        // open item_0 Titel in inventory
+        inventory.openItemByTitle(driver_edge, 0);
+
+        // check url (item_0)
+        assertEquals(driver_edge.getCurrentUrl(), this.item_0_url);
+
+        // open sidebar and click All Items
+        sideBar.allItems(driver_edge);
+
+        // check url (inventory)
+        assertEquals(driver_edge.getCurrentUrl(), this.inventory_url);
     }
 
     @After

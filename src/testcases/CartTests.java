@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v120.page.Page;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import page_objects.Page_Cart;
@@ -44,7 +43,6 @@ public class CartTests {
 
 
     @Test
-    @DisplayName("Test abc")
     public void addremovealltoCartStandardUser(){
         String Result;
         

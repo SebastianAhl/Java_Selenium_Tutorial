@@ -7,93 +7,99 @@ import org.openqa.selenium.WebDriver;
 public class Page_Inventory {
     
 
-    // Sauce Labs Backpack title
-    // link product information
-    private By backpacktitleBy = By.id("item_4_title_link");
-
-    // Sauce Labs Backpack image
-    // link product information
-    private By backpackimgBy = By.id("item_4_img_link");
-
-    // Sauce Labs Backpack Add to cart
-    private By backpackaddcartBy = By.id("add-to-cart-sauce-labs-backpack");
+    // Sauce Labs Backpack 
+    // title
+    private By item4TitleBy = By.id("item_4_title_link");
+    // image
+    private By item4ImgBy = By.id("item_4_img_link");
+    // Add to cart
+    private By item4AddToCartBy = By.id("add-to-cart-sauce-labs-backpack");
 
  
-    // Sauce Labs Bike Light title
-    // link product information
-    private By bikelighttitleBy = By.id("item_0_title_link");
-
-    // Sauce Labs Bike Light image
-    // link product information
-    private By bikelightimgBy = By.id("item_0_img_link");
-
-    // Sauce Labs Bike Light Add to cart
-    private By bikelightaddcartBy = By.id("add-to-cart-sauce-labs-bike-light");
+    // Sauce Labs Bike Light 
+    // title
+    private By item0TitleBy = By.id("item_0_title_link");
+    // image
+    private By item0ImgBy = By.id("item_0_img_link");
+    // Add to cart
+    private By item0AddToCartBy = By.id("add-to-cart-sauce-labs-bike-light");
 
 
-    // Sauce Labs Bolt T-Shirt title
-    // link product information
-    private By bolttshirttitleBy = By.id("item_1_title_link");
-
-    // Sauce Labs Bolt T-Shirt image
-    // link product information
-    private By bolttshirtimgBy = By.id("item_1_img_link");
-
-    // Sauce Labs Bolt T-Shirt Add to cart
-    private By bolttshirtaddcartBy = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
+    // Sauce Labs Bolt T-Shirt 
+    // title
+    private By item1TitleBy = By.id("item_1_title_link");
+    // image
+    private By item1ImgBy = By.id("item_1_img_link");
+    // Add to cart
+    private By item1AddToCartBy = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
 
 
-    // Sauce Labs Labs Fleece Jacket title
-    // link product information
-    private By fleecejackettitleBy = By.id("item_5_title_link");
-
-    // Sauce Labs Labs Fleece Jacket image
-    // link product information
-    private By fleecejacketimgBy = By.id("item_5_img_link");
-
-    // Sauce Labs Labs Fleece Jacket Add to cart
-    private By fleecejacketaddcartBy = By.id("add-to-cart-sauce-labs-fleece-jacket");
+    // Sauce Labs Labs Fleece Jacket 
+    // title
+    private By item5TitleBy = By.id("item_5_title_link");
+    // image
+    private By item5ImgBy = By.id("item_5_img_link");
+    // Add to cart
+    private By item5AddToCartBy = By.id("add-to-cart-sauce-labs-fleece-jacket");
 
 
-    // Sauce Labs Onesie title
-    // link product information
-    private By onesietitleBy = By.id("item_2_title_link");
-
-    // Sauce Labs Onesie image
-    // link product information
-    private By onesieimgBy = By.id("item_2_img_link");
-
-    // Sauce Labs Onesie Add to cart
-    private By onesieaddcartBy = By.id("add-to-cart-sauce-labs-onesie");
+    // Sauce Labs Onesie 
+    // title
+    private By item2TitleBy = By.id("item_2_title_link");
+    // image
+    private By item2ImgBy = By.id("item_2_img_link");
+    // Add to cart
+    private By item2AddToCartBy = By.id("add-to-cart-sauce-labs-onesie");
 
 
-    // Sauce Labs Test T-Shirt title
-    // link product information
-    private By testtshirttitleBy = By.id("item_3_title_link");
-
-    // Sauce Labs Test T-Shirt image
-    // link product information
-    private By testtshirtimgBy = By.id("item_3_img_link");
-
-    // Sauce Labs Test T-Shirt Add to cart
-    private By testtshirtaddcartBy = By.id("add-to-cart-test.allthethings()-t-shirt-(red)");
+    // Sauce Labs Test T-Shirt 
+    // title
+    private By item3TitleBy = By.id("item_3_title_link");
+    // image
+    private By item3ImgBy = By.id("item_3_img_link");
+    // Add to cart
+    private By item3AddToCartBy = By.id("add-to-cart-test.allthethings()-t-shirt-(red)");
 
 
     // Button open cart
     private By buttonOpenCartBy = By.className("shopping_cart_link");
 
+
+
     public void addalltocart(WebDriver driver) {
-        driver.findElement(backpackaddcartBy).click();
-        driver.findElement(bikelightaddcartBy).click();
-        driver.findElement(bolttshirtaddcartBy).click();
-        driver.findElement(fleecejacketaddcartBy).click();
-        driver.findElement(onesieaddcartBy).click();
-        driver.findElement(testtshirtaddcartBy).click();
+        driver.findElement(item4AddToCartBy).click();
+        driver.findElement(item0AddToCartBy).click();
+        driver.findElement(item1AddToCartBy).click();
+        driver.findElement(item5AddToCartBy).click();
+        driver.findElement(item2AddToCartBy).click();
+        driver.findElement(item3AddToCartBy).click();
     }
 
     public void openCart(WebDriver driver) {
         driver.findElement(buttonOpenCartBy).click();
     }
 
-    
+    public void openItemByTitle(WebDriver driver, int ItemNo){
+        switch (ItemNo) {
+            case 0:
+                driver.findElement(item0TitleBy).click();
+                break;
+            case 1:
+            driver.findElement(item0TitleBy).click();
+                break;
+            case 2:
+            driver.findElement(item0TitleBy).click();
+                break;
+            case 3:
+            driver.findElement(item0TitleBy).click();
+                break;
+            case 4:
+            driver.findElement(item0TitleBy).click();
+                break;
+            case 5:
+            driver.findElement(item0TitleBy).click();
+                break;
+        }
+
+        }
 }

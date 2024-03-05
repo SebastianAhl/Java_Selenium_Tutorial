@@ -77,5 +77,16 @@ public class Page_Sidebar {
 
         driver.findElement(resetAppStateBy).click();
     }
+
+    public void allItems(WebDriver driver){
+        driver.findElement(openSidebarBtnBy).click();
+        try {
+            TimeUnit.SECONDS.sleep(timer_open_close_sidebar);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        driver.findElement(allItemsBy).click();
+    }
     
 }
