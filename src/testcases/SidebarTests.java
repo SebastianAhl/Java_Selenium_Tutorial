@@ -2,7 +2,6 @@ package testcases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
@@ -28,11 +27,8 @@ String login_address = "https://www.saucedemo.com/";
 
         // Check URL
         assertEquals(this.login_address, this.driver_edge.getCurrentUrl());
-   
-    }
 
-    @Test
-    public void CloseSideBar(){
+        // Login standard_user
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -41,7 +37,11 @@ String login_address = "https://www.saucedemo.com/";
         
         // Check URL Inventory
         assertEquals(this.inventory_address, this.driver_edge.getCurrentUrl());
+   
+    }
 
+    @Test
+    public void CloseSideBar(){
         // Open and close the Sidebar
         String Result = sideBar.closeSidebar(driver_edge);
 
@@ -50,17 +50,9 @@ String login_address = "https://www.saucedemo.com/";
 
     @Test
     public void LinkAbout(){
-        String username = "standard_user";
-        String password = "secret_sauce";
         String aboutUrl = "https://saucelabs.com/";
 
-        // Login
-        loginPage.login(this.driver_edge, username, password);
-        
-        // Check URL Inventory
-        assertEquals(this.inventory_address, this.driver_edge.getCurrentUrl());
-
-        // Check 
+        // Check the link function
         String Result = sideBar.checkAbout(driver_edge);
 
         assertEquals(aboutUrl, Result);
