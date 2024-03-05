@@ -2,6 +2,7 @@ ToDo:                                                                           
 - Add license                                                                         Added GNU
 - Complete Readme
 - Add Header to each file
+- Change driver_edge to driver so different browsers can be used
 - (Optional) Check links with properties
 - Create Report (Optional)
   - Add @Tag("") to the tests to separate them
@@ -16,6 +17,7 @@ X                                   - Failed Login with locked_out_user
                                     - (Optional) error-user. same tests like standard-user 
                                       to find all errors
 X       - Inventory Standard User   - Product sort function (A-Z; Z-A; Price L-H; Price H-L)            https://www.saucedemo.com/inventory.html
+X                                   - Open each item and add to cart
 X       - Sidebar Standard  User    - Check Link "About"                                                ---
 X                                   - Slide out and in
 X                                   - Function & Link "Logout"

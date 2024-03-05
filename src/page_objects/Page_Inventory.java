@@ -101,22 +101,22 @@ public class Page_Inventory {
     public void openItemByTitle(WebDriver driver, int ItemNo){
         switch (ItemNo) {
             case 0:
-                driver.findElement(item0TitleBy).click();
+                driver.findElement(item0TitleBy).click();           
                 break;
             case 1:
-            driver.findElement(item0TitleBy).click();
+                driver.findElement(item1TitleBy).click();
                 break;
             case 2:
-            driver.findElement(item0TitleBy).click();
+                driver.findElement(item2TitleBy).click();
                 break;
             case 3:
-            driver.findElement(item0TitleBy).click();
+                driver.findElement(item3TitleBy).click();
                 break;
             case 4:
-            driver.findElement(item0TitleBy).click();
+                driver.findElement(item4TitleBy).click();
                 break;
             case 5:
-            driver.findElement(item0TitleBy).click();
+                driver.findElement(item5TitleBy).click();
                 break;
         }
 

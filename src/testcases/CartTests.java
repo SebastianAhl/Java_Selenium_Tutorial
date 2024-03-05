@@ -87,7 +87,7 @@ public class CartTests {
                 case 3:
                     // text Price (high to low)
                     assertEquals(text, "Price (high to low)");
-                    break;    
+                    break;
             }
         }
     }
