@@ -5,49 +5,10 @@ package testcases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-
-import page_objects.Page_Cart;
-import page_objects.Page_Inventory;
-import page_objects.Page_Items;
-import page_objects.Page_Login;
-
-public class InventoryItemsTests {
-    private WebDriver driver = new EdgeDriver(); 
-    private String start_Address = "https://www.saucedemo.com/";
-    private String dest_Address = "https://www.saucedemo.com/inventory.html";
-    private String username = "standard_user";
-    private String password = "secret_sauce";
-
-    private Page_Login login_Page = new Page_Login();
-    private Page_Inventory inventory_Page = new Page_Inventory();
-    private Page_Items item_Page = new Page_Items();
-    private Page_Cart cart_Page = new Page_Cart();
 
 
-
-
-
-    @Before
-    public void openStartUrl(){
-        //Webdriver        
-        this.driver.get(this.start_Address);
-
-        // Check URL
-        assertEquals(this.start_Address, this.driver.getCurrentUrl());
-
-        // login
-        // Login
-        login_Page.login(this.driver, this.username, this.password);
-        
-        // Check URL
-        assertEquals(this.dest_Address, this.driver.getCurrentUrl());
-    }
-
+public class InventoryItemsTests extends Tests{
 
     @Test
     public void checkItem4(){
@@ -87,11 +48,4 @@ public class InventoryItemsTests {
         // check cart
         assertEquals(6, this.cart_Page.countItemsInCart(this.driver));
     }
-
-    @After
-    public void teardown(){
-        // end webdriver
-        this.driver.quit();
-    }
-
 }

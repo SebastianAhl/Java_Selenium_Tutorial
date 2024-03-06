@@ -34,7 +34,7 @@ X       - Checkout-complete         - Check for Checkout Complete               
 X                                   - "Back Home" Button on Checkout-Complete
 
 Checked:                Syntax    Comment Header  Webdriver   @Tag    @DisplayNames   @Before   @After
-Page_Cart               X         X
+Page_Cart               X         X               
 Page_Checkout_Complete  X         X
 Page_Checkout_Step_One  X         X
 Page_Checkout_Step_Two  X         X

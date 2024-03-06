@@ -5,37 +5,19 @@ package testcases;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-
-import page_objects.Page_Login;
-import page_objects.Page_Sidebar;
 
 
-
-public class LoginLogoutTests {
-
-    private String login_Address = "https://www.saucedemo.com/";
-    private String inventory_Address = "https://www.saucedemo.com/inventory.html";
-    private WebDriver driver = new EdgeDriver(); 
-
-    private Page_Login login_Page = new Page_Login();
-    private Page_Sidebar sidebar_Page = new Page_Sidebar();
-    
-
-
-
+public class LoginLogoutTests extends Tests{
 
     @Before
     public void openStartUrl(){
         //Webdriver        
-        this.driver.get(this.login_Address);
+        this.driver.get(this.login_Url);
 
         // Check URL
-        assertEquals(this.login_Address, this.driver.getCurrentUrl());
+        assertEquals(this.login_Url, this.driver.getCurrentUrl());
    
     }
 
@@ -48,13 +30,13 @@ public class LoginLogoutTests {
         this.login_Page.login(this.driver, username, password);
         
         // Check URL Inventory
-        assertEquals(this.inventory_Address, this.driver.getCurrentUrl());
+        assertEquals(this.inventory_Url, this.driver.getCurrentUrl());
 
         // Logout
         this.sidebar_Page.logout(driver);
 
         // Check URL Startpage
-        assertEquals(this.login_Address, this.driver.getCurrentUrl());    
+        assertEquals(this.login_Url, this.driver.getCurrentUrl());    
         
         
     }
@@ -69,7 +51,7 @@ public class LoginLogoutTests {
         this.login_Page.login(this.driver, username, password);
         
         // Check URL Startpage
-        assertEquals(this.login_Address, this.driver.getCurrentUrl());        
+        assertEquals(this.login_Url, this.driver.getCurrentUrl());        
 
         // Check Error Message
         assertEquals(OrigErrorMsg, this.login_Page.returnError(this.driver));
@@ -99,17 +81,11 @@ public class LoginLogoutTests {
             this.login_Page.login(this.driver, username, password);
             
             // Check URL Startpage
-            assertEquals(this.login_Address, this.driver.getCurrentUrl());        
+            assertEquals(this.login_Url, this.driver.getCurrentUrl());        
 
             // Check Error Message
             assertEquals(OrigErrorMsg, this.login_Page.returnError(driver));  
         }
         
-    }
-
-    @After
-    public void teardown(){
-        // end webdriver
-        this.driver.quit();
     }
 }
