@@ -1,15 +1,17 @@
 ## Disclaimer
 This project was created for educational purposes. It is freely accessible to everyone. No liability is accepted for any damage resulting from its use.
 
-## Short Description
+## Description
+This project is intended to provide an easy introduction to programming with [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) using Java. The project demonstrates the use of Selenium for automated testing of websites.
 
-This project is intended to provide an easy introduction to programming with Selenium using Java. The project demonstrates the use of Selenium for automated testing of websites. To make it easier to get started, the use of build tools has been left out. At this point there won't be any test report created. You can use the integrated 
-I will demonstrate the use of the building tool Maven in a fork of this repository. (coming soon)
+To make it easier to get started, the use of build tools has been left out. At this point there won't be any test report created. You can use the integrated [Testing Explorer](https://code.visualstudio.com/docs/java/java-testing#_enable-testing-and-adding-test-framework-jars-to-your-project). I will demonstrate the use of the building tool Maven in a fork of this repository. (coming soon...)
 
-Further information: 
-[Selenium WebDriver Documentation](https://www.selenium.dev/documentation/webdriver/)
+I tried to use the [Test Practices of Selenium](https://www.selenium.dev/documentation/test_practices/) and the encouraged use of [Page object models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/).
+
+If you have any questions feel free to contact me directly.
+
+# Further information:
 [Visual Studio Code Java Testing](https://code.visualstudio.com/docs/java/java-testing)
-[Visual Studio Code Testing Explorer](https://code.visualstudio.com/docs/java/java-testing#_enable-testing-and-adding-test-framework-jars-to-your-project)
 
 ## Software Used
 Microsoft Windows 11 v22H2
@@ -62,13 +64,21 @@ Download the browsers and install them with standard settings. Firefox you can i
 8. With "File --> Open Folder" you can open the folder where you downloaded the repository from github.
 
 ## Hints
-
-XPATH
+# Finding XPath easy
+An easy way to find and copy XPATH of web elements with Edge browser
+1. Open the website
+2. Press F12 to open "Inspect"
+3. Left-top-corner of "Inspect" press the button "Select ..."
+4. Now you can select an element on the website by clicking on it.
+5. The element will be highlighted in the "Inspect" as code
+6. Right-click the highlighted code "Copy --> Copy full Xpath"
+7. Enjoy your expath
 
 ## Folder Structure and File Description
-The workspace contains two folders by default, where:
+Folder contained in the workspace:
 - `src`: the folder to maintain sources
+- `src\page_objects`: the folder to maintain page objects
+- `src\testcases`: the folder to maintain testcases
 - `lib`: the folder to maintain dependencies
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
