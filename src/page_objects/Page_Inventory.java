@@ -1,3 +1,6 @@
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Page object for the Inventory Page
+
 package page_objects;
 
 import org.openqa.selenium.By;

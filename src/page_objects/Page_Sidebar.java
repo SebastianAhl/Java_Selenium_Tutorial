@@ -1,3 +1,6 @@
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Page object for the Sidebar
+
 package page_objects;
 
 import java.util.concurrent.TimeUnit;

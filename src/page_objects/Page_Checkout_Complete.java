@@ -1,3 +1,6 @@
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Page object for the Checkout Complete Page
+
 package page_objects;
 
 import org.openqa.selenium.By;

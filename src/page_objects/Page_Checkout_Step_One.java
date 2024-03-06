@@ -1,3 +1,6 @@
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Page object for the Checkout Step One Page
+
 package page_objects;
 
 

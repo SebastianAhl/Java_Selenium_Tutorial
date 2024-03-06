@@ -1,3 +1,6 @@
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Page object for the Cart
+
 package page_objects;
 
 import java.util.List;

@@ -1,3 +1,6 @@
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Tests for the sidebar object on the website
+
 package testcases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

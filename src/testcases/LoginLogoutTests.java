@@ -1,4 +1,5 @@
-// Test the flight search feature
+// Author:          Sebastian.Ahl@tewiz.de
+// Description:     Tests of the Login/Logout function on the website
 
 package testcases;
 
