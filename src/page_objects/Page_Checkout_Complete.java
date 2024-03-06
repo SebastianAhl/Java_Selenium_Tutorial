@@ -18,14 +18,14 @@ public class Page_Checkout_Complete {
     
 
     public void btnBackHome(WebDriver driver){
-        driver.findElement(btnBackHomeBy).click();
+        driver.findElement(this.btnBackHomeBy).click();
     }
 
     public String getThankYou(WebDriver driver){
-        return driver.findElement(outThankYouBy).getText();
+        return driver.findElement(this.outThankYouBy).getText();
     }
 
     public String getInfoText(WebDriver driver){
-        return driver.findElement(outInfoTextBy).getText();
+        return driver.findElement(this.outInfoTextBy).getText();
     }
 }

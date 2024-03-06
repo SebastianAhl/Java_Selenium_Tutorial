@@ -28,30 +28,30 @@ public class Page_Checkout_Step_One {
     
 
     public void addFirstName(WebDriver driver, String fName){
-        driver.findElement(firstNameBy).sendKeys(fName);
+        driver.findElement(this.firstNameBy).sendKeys(fName);
     }
 
     public void addLastName(WebDriver driver, String lName){
-        driver.findElement(lastNameBy).sendKeys(lName);
+        driver.findElement(this.lastNameBy).sendKeys(lName);
     }
 
     public void addZipPostalCode(WebDriver driver, String zipPostal){
-        driver.findElement(zipPostalCodeBy).sendKeys(zipPostal); 
+        driver.findElement(this.zipPostalCodeBy).sendKeys(zipPostal); 
     }
 
     public String getErrorMsg(WebDriver driver){
         // Error: First Name is required
         // Error: Last Name is required
         // Error: Postal Code is required
-        return driver.findElement(outErrorBy).getText();
+        return driver.findElement(this.outErrorBy).getText();
     }
 
     public void btnContinue(WebDriver driver){
-        driver.findElement(btnContinueBy).click();
+        driver.findElement(this.btnContinueBy).click();
     }
 
     public void btnCancel(WebDriver driver){
-        driver.findElement(btnCancelBy).click();
+        driver.findElement(this.btnCancelBy).click();
     }
 
 }

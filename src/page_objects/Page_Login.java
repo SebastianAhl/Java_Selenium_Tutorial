@@ -7,35 +7,32 @@ public class Page_Login {
     
 
     // username input
-    private By usernameBy = By.id("user-name");
+    private By userNameBy = By.id("user-name");
 
     // password input
     private By passwordBy = By.id("password");
 
     // login button
-    private By loginbtnBy = By.id("login-button");
+    private By btnLoginBy = By.id("login-button");
 
     // error message
-    private By errorBtn = By.cssSelector("h3[data-test='error']");
+    private By btnError = By.cssSelector("h3[data-test='error']");
 
 
 
     public void login(WebDriver driver, String username, String password) {
-        driver.findElement(usernameBy).sendKeys(username);
-        driver.findElement(passwordBy).sendKeys(password);
-        driver.findElement(loginbtnBy).click();
+        driver.findElement(this.userNameBy).sendKeys(username);
+        driver.findElement(this.passwordBy).sendKeys(password);
+        driver.findElement(this.btnLoginBy).click();
 
     }
 
     public String returnError(WebDriver driver){
-        String ErrorMsg;
-        ErrorMsg = driver.findElement(errorBtn).getText();
-
-        return ErrorMsg;
+        return  driver.findElement(this.btnError).getText();
     }
 
     public void deleteInput(WebDriver driver){
-        driver.findElement(usernameBy).clear();
-        driver.findElement(passwordBy).clear();
+        driver.findElement(this.userNameBy).clear();
+        driver.findElement(this.passwordBy).clear();
     }
 }

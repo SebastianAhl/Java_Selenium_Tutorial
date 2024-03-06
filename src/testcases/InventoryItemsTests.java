@@ -14,30 +14,35 @@ import page_objects.Page_Items;
 import page_objects.Page_Login;
 
 public class InventoryItemsTests {
-    WebDriver driver_edge = new EdgeDriver(); 
-    String start_address = "https://www.saucedemo.com/";
-    String dest_address = "https://www.saucedemo.com/inventory.html";
-    Page_Login login_page = new Page_Login();
-    Page_Inventory inventory_page = new Page_Inventory();
-    Page_Items item_page = new Page_Items();
-    Page_Cart cart_page = new Page_Cart();
-    String username = "standard_user";
-    String password = "secret_sauce";
+    private WebDriver driver = new EdgeDriver(); 
+    private String start_Address = "https://www.saucedemo.com/";
+    private String dest_Address = "https://www.saucedemo.com/inventory.html";
+    private String username = "standard_user";
+    private String password = "secret_sauce";
+
+    private Page_Login login_Page = new Page_Login();
+    private Page_Inventory inventory_Page = new Page_Inventory();
+    private Page_Items item_Page = new Page_Items();
+    private Page_Cart cart_Page = new Page_Cart();
+
+
+
+
 
     @Before
     public void openStartUrl(){
         //Webdriver        
-        this.driver_edge.get(this.start_address);
+        this.driver.get(this.start_Address);
 
         // Check URL
-        assertEquals(this.start_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.start_Address, this.driver.getCurrentUrl());
 
         // login
         // Login
-        login_page.login(this.driver_edge, this.username, this.password);
+        login_Page.login(this.driver, this.username, this.password);
         
         // Check URL
-        assertEquals(this.dest_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.dest_Address, this.driver.getCurrentUrl());
     }
 
 
@@ -51,9 +56,9 @@ public class InventoryItemsTests {
         String urlImg = "https://www.saucedemo.com/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg";
         String price = "$29.99";
 
-        inventory_page.openItemByTitle(driver_edge, 4);
+        this.inventory_Page.openItemByTitle(this.driver, 4);
         
-        String[] retValues = item_page.returnValues(driver_edge);
+        String[] retValues = this.item_Page.returnValues(this.driver);
 
         assertEquals(title, retValues[0]);
         assertEquals(description, retValues[1]);
@@ -66,26 +71,24 @@ public class InventoryItemsTests {
     public void addAllItemsToCart(){
         for(int i = 0; i <=5; i++){
             // open each item
-            inventory_page.openItemByTitle(driver_edge, i);
+            this.inventory_Page.openItemByTitle(this.driver, i);
             // add each item to cart
-            item_page.addCartItem(driver_edge, i);
+            this.item_Page.addCartItem(this.driver, i);
             // go back to product each time
-            item_page.backToProducts(driver_edge);
+            this.item_Page.backToProducts(this.driver);
         }
 
         // open cart      
-        inventory_page.openCart(driver_edge);
+        this.inventory_Page.openCart(this.driver);
 
         // check cart
-        int itemsInCart = cart_page.countItemsInCart(driver_edge);
-
-        assertEquals(itemsInCart, 6);
+        assertEquals(6, this.cart_Page.countItemsInCart(this.driver));
     }
 
     @After
     public void teardown(){
         // end webdriver
-        this.driver_edge.quit();
+        this.driver.quit();
     }
 
 }

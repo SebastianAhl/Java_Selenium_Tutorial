@@ -17,19 +17,24 @@ import page_objects.Page_Sidebar;
 
 public class LoginLogoutTests {
 
-    String login_address = "https://www.saucedemo.com/";
-    String inventory_address = "https://www.saucedemo.com/inventory.html";
-    WebDriver driver_edge = new EdgeDriver(); 
-    Page_Login loginPage = new Page_Login();
-    Page_Sidebar sidebarPage = new Page_Sidebar();
+    private String login_Address = "https://www.saucedemo.com/";
+    private String inventory_Address = "https://www.saucedemo.com/inventory.html";
+    private WebDriver driver = new EdgeDriver(); 
+
+    private Page_Login login_Page = new Page_Login();
+    private Page_Sidebar sidebar_Page = new Page_Sidebar();
     
+
+
+
+
     @Before
     public void openStartUrl(){
         //Webdriver        
-        this.driver_edge.get(this.login_address);
+        this.driver.get(this.login_Address);
 
         // Check URL
-        assertEquals(this.login_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.login_Address, this.driver.getCurrentUrl());
    
     }
 
@@ -39,16 +44,16 @@ public class LoginLogoutTests {
         String password = "secret_sauce";
 
         // Login
-        loginPage.login(this.driver_edge, username, password);
+        this.login_Page.login(this.driver, username, password);
         
         // Check URL Inventory
-        assertEquals(this.inventory_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.inventory_Address, this.driver.getCurrentUrl());
 
         // Logout
-        sidebarPage.logout(driver_edge);
+        this.sidebar_Page.logout(driver);
 
         // Check URL Startpage
-        assertEquals(this.login_address, this.driver_edge.getCurrentUrl());    
+        assertEquals(this.login_Address, this.driver.getCurrentUrl());    
         
         
     }
@@ -58,20 +63,15 @@ public class LoginLogoutTests {
         String username = "locked_out_user";
         String password = "secret_sauce";
         String OrigErrorMsg = "Epic sadface: Sorry, this user has been locked out.";
-        String RecErrorMsg;
 
         // Login
-        loginPage.login(this.driver_edge, username, password);
+        this.login_Page.login(this.driver, username, password);
         
         // Check URL Startpage
-        assertEquals(this.login_address, this.driver_edge.getCurrentUrl());        
-
-        // Get Error Message
-        RecErrorMsg = loginPage.returnError(driver_edge);
+        assertEquals(this.login_Address, this.driver.getCurrentUrl());        
 
         // Check Error Message
-        assertEquals(OrigErrorMsg, RecErrorMsg);
-
+        assertEquals(OrigErrorMsg, this.login_Page.returnError(this.driver));
     }
 
     @Test
@@ -79,10 +79,9 @@ public class LoginLogoutTests {
         String username = "USER";
         String password = "PASSWORD";
         String OrigErrorMsg = "Epic sadface: Username and password do not match any user in this service";
-        String RecErrorMsg;
         
         for(int i = 0; i<=1; i++){
-            loginPage.deleteInput(driver_edge);
+            this.login_Page.deleteInput(this.driver);
 
             switch (i) {
                 case 0:
@@ -96,16 +95,13 @@ public class LoginLogoutTests {
             }
 
             // Login
-            loginPage.login(this.driver_edge, username, password);
+            this.login_Page.login(this.driver, username, password);
             
             // Check URL Startpage
-            assertEquals(this.login_address, this.driver_edge.getCurrentUrl());        
-
-            // Get Error Message
-            RecErrorMsg = loginPage.returnError(driver_edge);
+            assertEquals(this.login_Address, this.driver.getCurrentUrl());        
 
             // Check Error Message
-            assertEquals(OrigErrorMsg, RecErrorMsg);  
+            assertEquals(OrigErrorMsg, this.login_Page.returnError(driver));  
         }
         
     }
@@ -113,6 +109,6 @@ public class LoginLogoutTests {
     @After
     public void teardown(){
         // end webdriver
-        this.driver_edge.quit();
+        this.driver.quit();
     }
 }

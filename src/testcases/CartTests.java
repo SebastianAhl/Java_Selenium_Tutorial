@@ -18,52 +18,49 @@ import page_objects.Page_Login;
 
 
 public class CartTests {
-    WebDriver driver_edge = new EdgeDriver(); 
-    String start_address = "https://www.saucedemo.com/";
-    String dest_address = "https://www.saucedemo.com/inventory.html";
-    Page_Login login_user = new Page_Login();
-    Page_Inventory inventory_page = new Page_Inventory();
-    Page_Cart cart_page = new Page_Cart();
-    Page_Checkout_Step_One checkout_one_page = new Page_Checkout_Step_One();
-    Page_Checkout_Step_Two checkout_two_page = new Page_Checkout_Step_Two();
-    Page_Checkout_Complete checkout_complete_page = new Page_Checkout_Complete();
-    String username = "standard_user";
-    String password = "secret_sauce";
+    private WebDriver driver = new EdgeDriver(); 
+    private String start_Address = "https://www.saucedemo.com/";
+    private String dest_Address = "https://www.saucedemo.com/inventory.html";
+    private String username = "standard_user";
+    private String password = "secret_sauce";
+
+    private Page_Login login_Page = new Page_Login();
+    private Page_Inventory inventory_Page = new Page_Inventory();
+    private Page_Cart cart_Page = new Page_Cart();
+    private Page_Checkout_Step_One checkout_One_Page = new Page_Checkout_Step_One();
+    private Page_Checkout_Step_Two checkout_Two_Page = new Page_Checkout_Step_Two();
+    private Page_Checkout_Complete checkout_Complete_Page = new Page_Checkout_Complete();
+
+
+
+
 
     @Before
     public void openStartUrl(){
         //Webdriver        
-        this.driver_edge.get(this.start_address);
+        this.driver.get(this.start_Address);
 
         // Check URL
-        assertEquals(this.start_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.start_Address, this.driver.getCurrentUrl());
 
         // login
         // Login
-        login_user.login(this.driver_edge, this.username, this.password);
+        login_Page.login(this.driver, this.username, this.password);
         
         // Check URL
-        assertEquals(this.dest_address, this.driver_edge.getCurrentUrl());
+        assertEquals(this.dest_Address, this.driver.getCurrentUrl());
     }
 
 
     @Test
     public void addremovealltoCartStandardUser(){
-        String Result;
-        
-        Page_Inventory pageInventory = new Page_Inventory();
-        Page_Cart removeAll = new Page_Cart();
-
         // add all to the cart
-        pageInventory.addalltocart(driver_edge);
+        this.inventory_Page.addalltocart(this.driver);
 
         // open cart
-        pageInventory.openCart(driver_edge);
+        this.inventory_Page.openCart(this.driver);
 
-        // remove all from cart
-        Result = removeAll.removeAllItems(driver_edge);
-        
-        assertEquals(Result, "Elements in cart: 0");
+        assertEquals("Elements in cart: 0", this.cart_Page.removeAllItems(this.driver));
         
     }
 
@@ -73,7 +70,7 @@ public class CartTests {
 
         for( int i = 0; i < 4; i++){
             // index A-Z=0 ; Z-A=1 ; Price low-high=2 ; Price high-low=3
-            text = inventory_page.sortItems(driver_edge, i);
+            text = this.inventory_Page.sortItems(this.driver, i);
 
             switch (i) {
                 case 0:
@@ -100,67 +97,67 @@ public class CartTests {
     public void checkFullOrderProcess(){
         // Page_Inventory
         // add all to cart
-        inventory_page.addalltocart(driver_edge);
+        this.inventory_Page.addalltocart(this.driver);
 
         // press open cart button
-        inventory_page.openCart(driver_edge);
+        this.inventory_Page.openCart(this.driver);
 
         // Page_Cart
         // check if there are 6 items inside
-        assertEquals(6, cart_page.countItemsInCart(driver_edge));
+        assertEquals(6, this.cart_Page.countItemsInCart(this.driver));
 
         // press checkout button
-        cart_page.btnCheckout(driver_edge);
+        this.cart_Page.btnCheckout(this.driver);
 
         // Page_Checkout_Step_One
         // add first name, last name, Zip/Postal Code
-        checkout_one_page.addFirstName(driver_edge, "FIRST");
-        checkout_one_page.addLastName(driver_edge, "LAST");
-        checkout_one_page.addZipPostalCode(driver_edge, "0123456789");
+        this.checkout_One_Page.addFirstName(this.driver, "FIRST");
+        this.checkout_One_Page.addLastName(this.driver, "LAST");
+        this.checkout_One_Page.addZipPostalCode(this.driver, "0123456789");
 
         // press continue button
-        checkout_one_page.btnContinue(driver_edge);
+        this.checkout_One_Page.btnContinue(this.driver);
 
         // Page_Checkout_Step_Two
         // check Payment Information = SauceCard #31337
-        assertEquals("SauceCard #31337", checkout_two_page.getPaymentInfo(driver_edge));
+        assertEquals("SauceCard #31337", this.checkout_Two_Page.getPaymentInfo(this.driver));
 
         // check Shipping Information = Free Pony Express Delivery!
-        assertEquals("Free Pony Express Delivery!", checkout_two_page.getShippingInfo(driver_edge));
+        assertEquals("Free Pony Express Delivery!", this.checkout_Two_Page.getShippingInfo(this.driver));
 
         // check Price Total
         // Item total: $129.94
-        assertEquals("Item total: $129.94", checkout_two_page.getItemTotal(driver_edge));
+        assertEquals("Item total: $129.94", this.checkout_Two_Page.getItemTotal(this.driver));
 
         // Tax: $10.40
-        assertEquals("Tax: $10.40", checkout_two_page.getTax(driver_edge));
+        assertEquals("Tax: $10.40", this.checkout_Two_Page.getTax(this.driver));
 
         // check Total = Total: $140.34
-        assertEquals("Total: $140.34", checkout_two_page.getTotal(driver_edge));
+        assertEquals("Total: $140.34", this.checkout_Two_Page.getTotal(this.driver));
 
         // press Finish button
-        checkout_two_page.btnFinish(driver_edge);
+        this.checkout_Two_Page.btnFinish(this.driver);
 
         // Page_Checkout_Complete
         // check "Thank you for your order!"
-        assertEquals("Thank you for your order!", checkout_complete_page.getThankYou(driver_edge));
+        assertEquals("Thank you for your order!", this.checkout_Complete_Page.getThankYou(this.driver));
 
         // check "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
         assertEquals("Your order has been dispatched, and will arrive just as fast as the pony can get there!",
-                    checkout_complete_page.getInfoText(driver_edge));
+        this.checkout_Complete_Page.getInfoText(this.driver));
 
         // press Back Home button
-        checkout_complete_page.btnBackHome(driver_edge);
+        this.checkout_Complete_Page.btnBackHome(this.driver);
 
         // Page_Invetory
         // check url
-        assertEquals("https://www.saucedemo.com/inventory.html", driver_edge.getCurrentUrl());
+        assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
     }
 
     @After
     public void teardown(){
         // end webdriver
-        this.driver_edge.quit();
+        this.driver.quit();
     }
 }
 

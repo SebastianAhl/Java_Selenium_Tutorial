@@ -16,12 +16,8 @@ public class Page_Items {
     // price
     private By itemPriceBy = By.className("inventory_details_price");
 
-
-    // Button open cart
-    protected By buttonOpenCartBy = By.className("shopping_cart_link");
-
     // Button Back to products
-    protected By backToProductsBy = By.xpath("//*[@id='back-to-products']");
+    private By backToProductsBy = By.xpath("//*[@id='back-to-products']");
 
     // Add to cart
     private By item0AddToCartBy = By.id("add-to-cart-sauce-labs-bike-light");
@@ -39,16 +35,16 @@ public class Page_Items {
     
     public String[] returnValues(WebDriver driver) {
         // values[0] = title.getText();
-        values[0] = driver.findElement(itemTitleBy).getText();
+        this.values[0] = driver.findElement(this.itemTitleBy).getText();
 
         // values[1] = description.getText();
-        values[1] = driver.findElement(itemDescBy).getText();
+        this.values[1] = driver.findElement(this.itemDescBy).getText();
 
         // Image URL
-        values[2] = driver.findElement(itemImgBy).getAttribute("src");
+        this.values[2] = driver.findElement(this.itemImgBy).getAttribute("src");
 
         // Item Price
-        values[3] = driver.findElement(itemPriceBy).getText();
+        this.values[3] = driver.findElement(this.itemPriceBy).getText();
 
         return values;
     }
@@ -56,27 +52,27 @@ public class Page_Items {
     public void addCartItem(WebDriver driver, int item){
         switch (item) {
             case 0:
-                driver.findElement(item0AddToCartBy).click();
+                driver.findElement(this.item0AddToCartBy).click();
                 break;
             case 1:
-                driver.findElement(item1AddToCartBy).click();
+                driver.findElement(this.item1AddToCartBy).click();
                 break;               
             case 2:
-                driver.findElement(item2AddToCartBy).click();
+                driver.findElement(this.item2AddToCartBy).click();
                 break;        
             case 3:
-                driver.findElement(item3AddToCartBy).click();
+                driver.findElement(this.item3AddToCartBy).click();
                 break;        
             case 4:
-                driver.findElement(item4AddToCartBy).click();
+                driver.findElement(this.item4AddToCartBy).click();
                 break;        
             case 5:
-                driver.findElement(item5AddToCartBy).click();
+                driver.findElement(this.item5AddToCartBy).click();
                 break;        
         }
     }
 
     public void backToProducts(WebDriver driver){
-        driver.findElement(backToProductsBy).click();
+        driver.findElement(this.backToProductsBy).click();
     }
 }

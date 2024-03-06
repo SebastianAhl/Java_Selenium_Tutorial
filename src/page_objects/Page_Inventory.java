@@ -77,46 +77,46 @@ public class Page_Inventory {
 
     public String sortItems(WebDriver driver, int index){
 
-        WebElement selectOption = driver.findElement(sortItemsBy);
+        WebElement selectOption = driver.findElement(this.sortItemsBy);
         Select select = new Select(selectOption);
 
         select.selectByIndex(index);
 
-        return driver.findElement(activeOptionBy).getText();
+        return driver.findElement(this.activeOptionBy).getText();
     }
 
     public void addalltocart(WebDriver driver) {
-        driver.findElement(item4AddToCartBy).click();
-        driver.findElement(item0AddToCartBy).click();
-        driver.findElement(item1AddToCartBy).click();
-        driver.findElement(item5AddToCartBy).click();
-        driver.findElement(item2AddToCartBy).click();
-        driver.findElement(item3AddToCartBy).click();
+        driver.findElement(this.item4AddToCartBy).click();
+        driver.findElement(this.item0AddToCartBy).click();
+        driver.findElement(this.item1AddToCartBy).click();
+        driver.findElement(this.item5AddToCartBy).click();
+        driver.findElement(this.item2AddToCartBy).click();
+        driver.findElement(this.item3AddToCartBy).click();
     }
 
     public void openCart(WebDriver driver) {
-        driver.findElement(buttonOpenCartBy).click();
+        driver.findElement(this.buttonOpenCartBy).click();
     }
 
     public void openItemByTitle(WebDriver driver, int ItemNo){
         switch (ItemNo) {
             case 0:
-                driver.findElement(item0TitleBy).click();           
+                driver.findElement(this.item0TitleBy).click();           
                 break;
             case 1:
-                driver.findElement(item1TitleBy).click();
+                driver.findElement(this.item1TitleBy).click();
                 break;
             case 2:
-                driver.findElement(item2TitleBy).click();
+                driver.findElement(this.item2TitleBy).click();
                 break;
             case 3:
-                driver.findElement(item3TitleBy).click();
+                driver.findElement(this.item3TitleBy).click();
                 break;
             case 4:
-                driver.findElement(item4TitleBy).click();
+                driver.findElement(this.item4TitleBy).click();
                 break;
             case 5:
-                driver.findElement(item5TitleBy).click();
+                driver.findElement(this.item5TitleBy).click();
                 break;
         }
 
@@ -125,22 +125,22 @@ public class Page_Inventory {
     public void openItemByImg(WebDriver driver, int ItemNo){
         switch (ItemNo) {
             case 0:
-                driver.findElement(item0ImgBy).click();           
+                driver.findElement(this.item0ImgBy).click();           
                 break;
             case 1:
-                driver.findElement(item1ImgBy).click();
+                driver.findElement(this.item1ImgBy).click();
                 break;
             case 2:
-                driver.findElement(item2ImgBy).click();
+                driver.findElement(this.item2ImgBy).click();
                 break;
             case 3:
-                driver.findElement(item3ImgBy).click();
+                driver.findElement(this.item3ImgBy).click();
                 break;
             case 4:
-                driver.findElement(item4ImgBy).click();
+                driver.findElement(this.item4ImgBy).click();
                 break;
             case 5:
-                driver.findElement(item5ImgBy).click();
+                driver.findElement(this.item5ImgBy).click();
                 break;
         }
     }
