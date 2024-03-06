@@ -89,4 +89,27 @@ public class Page_Cart {
     public void btnCheckout(WebDriver driver){
         driver.findElement(btnCheckoutBy).click();
     }
+
+    public void openItemByTitle(WebDriver driver, int ItemNo){
+        switch (ItemNo) {
+            case 0:
+                driver.findElement(bikelighttitleBy).click();           
+                break;
+            case 1:
+                driver.findElement(bolttshirttitleBy).click();
+                break;
+            case 2:
+                driver.findElement(onesietitleBy).click();
+                break;
+            case 3:
+                driver.findElement(testtshirttitleBy).click();
+                break;
+            case 4:
+                driver.findElement(backpacktitleBy).click();
+                break;
+            case 5:
+                driver.findElement(fleecejackettitleBy).click();
+                break;
+        }
+    }
 }

@@ -122,5 +122,28 @@ public class Page_Inventory {
 
     }
 
+    public void openItemByImg(WebDriver driver, int ItemNo){
+        switch (ItemNo) {
+            case 0:
+                driver.findElement(item0ImgBy).click();           
+                break;
+            case 1:
+                driver.findElement(item1ImgBy).click();
+                break;
+            case 2:
+                driver.findElement(item2ImgBy).click();
+                break;
+            case 3:
+                driver.findElement(item3ImgBy).click();
+                break;
+            case 4:
+                driver.findElement(item4ImgBy).click();
+                break;
+            case 5:
+                driver.findElement(item5ImgBy).click();
+                break;
+        }
+    }
+
 
 }
