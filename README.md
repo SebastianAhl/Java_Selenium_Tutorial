@@ -4,7 +4,7 @@ This project was created for educational purposes. It is freely accessible to ev
 # Description
 This project is intended to provide an easy introduction to programming with [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) using Java. The project demonstrates the use of Selenium for automated testing of websites.
 
-To make it easier to get started, the use of build tools has been left out. At this point there won't be any test report created. You can use the integrated [Testing Explorer](https://code.visualstudio.com/docs/java/java-testing#_enable-testing-and-adding-test-framework-jars-to-your-project). I will demonstrate the use of the building tool Maven in a fork of this repository. (coming soon...)
+This branch shows the same tests but with the use of Maven as building tool.
 
 I tried to use the [Test Practices of Selenium](https://www.selenium.dev/documentation/test_practices/) and the encouraged use of [Page object models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/).
 
