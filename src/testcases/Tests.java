@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import page_objects.Page_Cart;
 import page_objects.Page_Checkout_Complete;
@@ -24,8 +26,9 @@ public class Tests {
     protected String inventory_Url = "https://www.saucedemo.com/inventory.html";
     protected String cart_Url = "https://www.saucedemo.com/cart.html";
 
-    protected WebDriver driver = new EdgeDriver(); 
-
+    // protected WebDriver driver = new FirefoxDriver();
+    // protected WebDriver driver = new ChromeDriver(); 
+    protected WebDriver driver = new EdgeDriver();
 
     protected Page_Login login_Page = new Page_Login();
     protected Page_Sidebar sidebar_Page = new Page_Sidebar();

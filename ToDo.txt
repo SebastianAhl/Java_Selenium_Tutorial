@@ -1,5 +1,5 @@
-ToDo:                                                                                 Status
-- Add license                                                                         Added GNU
+ToDo:                                                                                   Status
+- Add license                                                                           Added GNU
 - Complete Readme
 - (Optional) Check links with properties
 - Create Report (Optional)
@@ -7,7 +7,7 @@ ToDo:                                                                           
   - Add @DisplayNames("") to identify them
   - Create Maven Project (second version, too complicated to explain just Selenium)
 - (Optional) Use Java Reflections in Page_Inventory openItemTitle and addToCart
-- Create a standard @Before and @After 
+- Create a standard @Before and @After                                                  in Tests.java
 
 
 Status  Page Objects:               Testcases:                                                          URL:
@@ -33,17 +33,17 @@ X                                   - Finish Button
 X       - Checkout-complete         - Check for Checkout Complete                                       https://www.saucedemo.com/checkout-complete.html
 X                                   - "Back Home" Button on Checkout-Complete
 
-Checked:                Syntax    Comment Header  Webdriver   @Tag    @DisplayNames   @Before   @After
-Page_Cart               X         X               
-Page_Checkout_Complete  X         X
-Page_Checkout_Step_One  X         X
-Page_Checkout_Step_Two  X         X
-Page_Inventory          X         X
-Page_Items              X         X
-Page_Login              X         X
-Page_Sidebar            X         X
+Checked:                Syntax          Comment Header          Webdriver       @Tag    @DisplayNames   @Before         @After
+Page_Cart               X               X                       -               -       -               -               -
+Page_Checkout_Complete  X               X                       -               -       -               -               -
+Page_Checkout_Step_One  X               X                       -               -       -               -               -
+Page_Checkout_Step_Two  X               X                       -               -       -               -               -
+Page_Inventory          X               X                       -               -       -               -               -
+Page_Items              X               X                       -               -       -               -               -
+Page_Login              X               X                       -               -       -               -               -
+Page_Sidebar            X               X                       -               -       -               -               -
 
-CartTests               X         X
-InventoryItemsTests     X         X
-LoginLogoutTests        X         X
-SidebarTests            X         X
+CartTests               X               X                       X                                       X               X
+InventoryItemsTests     X               X                       X                                       X               X
+LoginLogoutTests        X               X                       X                                       X               X
+SidebarTests            X               X                       X                                       X               X

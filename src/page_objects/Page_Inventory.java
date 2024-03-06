@@ -14,7 +14,7 @@ public class Page_Inventory {
 
     // Sauce Labs Backpack 
     // title
-    private By item4TitleBy = By.id("item_4_title_link");
+    private By item4TitleBy = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/a/div");
     // image
     private By item4ImgBy = By.id("item_4_img_link");
     // Add to cart
@@ -23,7 +23,7 @@ public class Page_Inventory {
  
     // Sauce Labs Bike Light 
     // title
-    private By item0TitleBy = By.id("item_0_title_link");
+    private By item0TitleBy = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[1]/a/div");
     // image
     private By item0ImgBy = By.id("item_0_img_link");
     // Add to cart
@@ -32,7 +32,7 @@ public class Page_Inventory {
 
     // Sauce Labs Bolt T-Shirt 
     // title
-    private By item1TitleBy = By.id("item_1_title_link");
+    private By item1TitleBy = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[3]/div[2]/div[1]/a/div");
     // image
     private By item1ImgBy = By.id("item_1_img_link");
     // Add to cart
@@ -41,7 +41,7 @@ public class Page_Inventory {
 
     // Sauce Labs Labs Fleece Jacket 
     // title
-    private By item5TitleBy = By.id("item_5_title_link");
+    private By item5TitleBy = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[4]/div[2]/div[1]/a/div");
     // image
     private By item5ImgBy = By.id("item_5_img_link");
     // Add to cart
@@ -50,7 +50,7 @@ public class Page_Inventory {
 
     // Sauce Labs Onesie 
     // title
-    private By item2TitleBy = By.id("item_2_title_link");
+    private By item2TitleBy = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[5]/div[2]/div[1]/a/div");
     // image
     private By item2ImgBy = By.id("item_2_img_link");
     // Add to cart
@@ -59,7 +59,7 @@ public class Page_Inventory {
 
     // Sauce Labs Test T-Shirt 
     // title
-    private By item3TitleBy = By.id("item_3_title_link");
+    private By item3TitleBy = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[6]/div[2]/div[1]/a/div");
     // image
     private By item3ImgBy = By.id("item_3_img_link");
     // Add to cart
