@@ -1,8 +1,20 @@
-## Getting Started
+## Disclaimer
+This project was created for educational purposes. It is freely accessible to everyone. No liability is accepted for any damage resulting from its use.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Short Description
 
-## Folder Structure
+This project is intended to provide an easy introduction to programming with Selenium using Java.
+Selenium is used for the automated testing of websites. The Selenium WebDriver was used.
+Further information: [text](https://www.selenium.dev/documentation/webdriver/)
+
+## Software Used
+
+
+## Installation Instructions
+
+## Hints
+
+## Folder Structure and File Description
 
 The workspace contains two folders by default, where:
 
@@ -12,7 +24,3 @@ The workspace contains two folders by default, where:
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
 > If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
