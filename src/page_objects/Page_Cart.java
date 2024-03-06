@@ -48,14 +48,19 @@ public class Page_Cart {
     private By testtshirtremoveBy = By.id("remove-test.allthethings()-t-shirt-(red)");
 
     // Cart items
-    private By cartItems = By.className("cart_item");
+    private By cartItemsBy = By.className("cart_item");
+
+    // Button Checkout
+    private By btnCheckoutBy = By.id("checkout");
+
+
 
 
 
     public String removeAllItems(WebDriver driver){
         // count Cart Items
         List<WebElement> listCartItems;
-        listCartItems = driver.findElements(cartItems);
+        listCartItems = driver.findElements(cartItemsBy);
         if (listCartItems.size() == 0){
             return "No Elements in the basket!";
         }
@@ -70,14 +75,18 @@ public class Page_Cart {
 
         // check if cart is empty
         List<WebElement> listCartItemsDel;
-        listCartItemsDel = driver.findElements(cartItems);
+        listCartItemsDel = driver.findElements(cartItemsBy);
         return ("Elements in cart: " + listCartItemsDel.size());
     }
 
     public int countItemsInCart(WebDriver driver){
         // count Cart Items
         List<WebElement> listCartItems;
-        listCartItems = driver.findElements(cartItems);
+        listCartItems = driver.findElements(cartItemsBy);
         return listCartItems.size();
+    }
+
+    public void btnCheckout(WebDriver driver){
+        driver.findElement(btnCheckoutBy).click();
     }
 }

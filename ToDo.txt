@@ -3,6 +3,7 @@ ToDo:                                                                           
 - Complete Readme
 - Add Header to each file
 - Change driver_edge to driver so different browsers can be used
+- Add code convention
 - (Optional) Check links with properties
 - Create Report (Optional)
   - Add @Tag("") to the tests to separate them
