@@ -4,7 +4,7 @@ This project was created for educational purposes. It is freely accessible to ev
 # Description
 This project is intended to provide an easy introduction to programming with [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) using Java. The project demonstrates the use of Selenium for automated testing of websites.
 
-This branch shows the same tests but with the use of Maven as building tool.
+This branch shows the same tests as the main branch but with the use of Maven as building tool.
 
 I tried to use the [Test Practices of Selenium](https://www.selenium.dev/documentation/test_practices/) and the encouraged use of [Page object models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/).
 
@@ -21,6 +21,8 @@ Google Chrome v122.0.6261.95
 Microsoft Edge v122.0.2365.66
 
 Java JDK v21.0.2
+
+Apache Maven 3.9.6
 
 Selenium for Java v4.18.1 (WebDriver)
 
@@ -46,7 +48,18 @@ Download the browsers and install them with standard settings. Firefox you can i
 4. In System Variables:
 - New... --> Variable name: JAVA_HOME --> Variable value: C:\Program Files\Java\jdk-21
 - Path --> Edit... --> New --> C:\Program Files\Java\jdk-21\bin
+- A system restart is recommended
 5. Open Command Line --> java --version --> you should see the version installed
+
+## Maven
+1. Download binary zip archive [Apache Maven](https://maven.apache.org/download.cgi)
+2. Extract it to c:\maven
+3. You should find a folder inside the maven folder called "apache-maven-3.9.6". Inside there are for example the LICENSE and README.txt files
+4. Open Environment Variables
+5. In System Variables:
+- Path --> Edit... --> New --> C:\maven\apache-maven-3.9.6\bin
+- A system restart is recommended
+6. Open Command Line --> mvn --version --> you should see the version installed
 
 ## Selenium
 1. Download the Selenium WebDriver
