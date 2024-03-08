@@ -5,6 +5,7 @@ package testcases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Test;
 public class CartTests extends Tests{
 
     @Test
+    @Tag("Test")
     public void addremovealltoCartStandardUser(){
         // add all to the cart
         this.inventory_Page.addalltocart(this.driver);
@@ -25,6 +27,7 @@ public class CartTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void selectSort(){
         String text;
 
@@ -54,6 +57,7 @@ public class CartTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void checkFullOrderProcess(){
         // Page_Inventory
         // add all to cart

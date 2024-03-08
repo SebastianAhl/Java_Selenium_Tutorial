@@ -4,7 +4,7 @@ This project was created for educational purposes. It is freely accessible to ev
 # Description
 This project is intended to provide an easy introduction to programming with [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) using Java. The project demonstrates the use of Selenium for automated testing of websites.
 
-This branch shows the same tests as the main branch but with the use of Maven as building tool.
+This branch shows the same tests as the main branch but with the use of Apache Maven as building tool. Please read "infos apache maven - mvn.md" in the repository root for further information.
 
 I tried to use the [Test Practices of Selenium](https://www.selenium.dev/documentation/test_practices/) and the encouraged use of [Page object models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/).
 
@@ -89,9 +89,20 @@ An easy way to find and copy XPATH of web elements with Edge browser
 
 # Folder Structure and File Description
 Folder contained in the workspace:
-- `src`: the folder to maintain sources
-- `src\page_objects`: the folder to maintain page objects
-- `src\testcases`: the folder to maintain testcases
-- `lib`: the folder to maintain dependencies
+- `src\main\java\tutorials\java`: The folder to maintain sources
+- `src\main\java\tutorials\java\page_objects`: The folder to maintain page objects
+- `src\test\java\env_tests`: Tests for the installed environment
+- `src\test\java\testcases`: The folder to maintain testcases
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+# Program Description
+For demo purposes the website [Saucedemo](https://www.saucedemo.com/) was used.
+
+Maven starts the tests and creates a report in the end.
+The project build information you can find in the pom.xml.
+
+In the folder "testcases" you can find the different testcases. Most of them extends the class in "Tests.java".
+The testcases access the page_objects to get access on the different objects of the web application.
+
+In the file "Tests.java" you can change the Selenium WebDriver to different browsers. I tested it with Mozilla Firefox, MS Edge and Google Chrome.
+
+For the sake of getting some detailed information in the htlm report, I created the testcase "FailingTest.java" with two tests that fail.

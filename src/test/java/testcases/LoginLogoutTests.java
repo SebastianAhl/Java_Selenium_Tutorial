@@ -6,6 +6,7 @@ package testcases;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
@@ -22,6 +23,7 @@ public class LoginLogoutTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void StandardUserLoginLogout(){
         String username = "standard_user";
         String password = "secret_sauce";
@@ -42,6 +44,7 @@ public class LoginLogoutTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void LockedOutUser(){
         String username = "locked_out_user";
         String password = "secret_sauce";
@@ -58,6 +61,7 @@ public class LoginLogoutTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void UserPwdNotMatch(){
         String username = "USER";
         String password = "PASSWORD";

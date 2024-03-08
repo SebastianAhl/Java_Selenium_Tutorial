@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: testcases.LoginLogoutTests
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.75 s -- in testcases.LoginLogoutTests

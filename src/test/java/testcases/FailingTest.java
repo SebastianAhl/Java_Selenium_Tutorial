@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 
 public class FailingTest {
     @Test
-    @Tag("Test")
+    @Tag("Failing")
     public void failingTest1(){
         assertEquals(1, 2);
 
     }
 
     @Test
-    @Tag("Test")
+    @Tag("Failing")
     public void failingTest2(){
         assertEquals(1, 2);
     }

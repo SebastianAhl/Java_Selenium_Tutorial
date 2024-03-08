@@ -5,11 +5,13 @@ package testcases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class InventoryItemsTests extends Tests{
 
     @Test
+    @Tag("Test")
     public void checkItem0(){
         String title = "Sauce Labs Bike Light";
         String description = String.join(" ",
@@ -31,6 +33,7 @@ public class InventoryItemsTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void checkItem1(){
         String title = "Sauce Labs Bolt T-Shirt";
         String description = String.join(" ",
@@ -52,6 +55,7 @@ public class InventoryItemsTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void checkItem2(){
         String title = "Sauce Labs Onesie";
         String description = String.join(" ",
@@ -73,6 +77,7 @@ public class InventoryItemsTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void checkItem3(){
         String title = "Test.allTheThings() T-Shirt (Red)";
         String description = String.join(" ",
@@ -94,6 +99,7 @@ public class InventoryItemsTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void checkItem4(){
         String title = "Sauce Labs Backpack";
         String description = String.join(" ",
@@ -115,6 +121,7 @@ public class InventoryItemsTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void checkItem5(){
         String title = "Sauce Labs Fleece Jacket";
         String description = String.join(" ",
@@ -136,6 +143,7 @@ public class InventoryItemsTests extends Tests{
     }
 
     @Test
+    @Tag("Test")
     public void addAllItemsToCart(){
         for(int i = 0; i <=5; i++){
             // open each item
