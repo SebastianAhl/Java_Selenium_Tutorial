@@ -1,9 +1,9 @@
 # Disclaimer
 This project was created for educational purposes. It is freely accessible to everyone. No liability is accepted for any damage resulting from its use.
 
-# Licenses for used software packages
-[Selenium](http://www.apache.org/licenses/LICENSE-2.0), [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-[Apache Maven](https://www.apache.org/licenses/), [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+# Licenses used software packages
+- [Selenium](http://www.apache.org/licenses/LICENSE-2.0), [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+- [Apache Maven](https://www.apache.org/licenses/), [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Description
 This project is intended to provide an easy introduction to programming with [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) using Java. The project demonstrates the use of Selenium for automated testing of websites.
