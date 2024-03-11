@@ -4,7 +4,9 @@ This project was created for educational purposes. It is freely accessible to ev
 # Description
 This project is intended to provide an easy introduction to programming with [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) using Java. The project demonstrates the use of Selenium for automated testing of websites.
 
-This branch shows the same tests as the main branch but with the use of Apache Maven as building tool. Please read "infos apache maven - mvn.md" in the repository root for further information.
+The branch "maven" shows the same tests as the main branch but with the use of Apache Maven as building tool. Please read "infos apache maven - mvn.md" in the repository root for further information.
+
+This branch "robot-framework" shows the use of robot framework. I will add more functionality to the whole project too. Please read "infos robot framework.md" in the repository root for further information.
 
 I tried to use the [Test Practices of Selenium](https://www.selenium.dev/documentation/test_practices/) and the encouraged use of [Page object models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/).
 
@@ -25,6 +27,8 @@ Java JDK v21.0.2
 Apache Maven 3.9.6
 
 Selenium for Java v4.18.1 (WebDriver)
+
+Robot Framework v4.1.2
 
 Microsoft Visual Studio Code V1.87.0
 Extensions:
